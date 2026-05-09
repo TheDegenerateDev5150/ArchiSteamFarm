@@ -553,20 +553,22 @@ internal static class ArchiKestrel {
 
 		WebApplication = webApplication;
 
-		foreach (string url in webApplication.Urls) {
-			if (!Uri.TryCreate(url, UriKind.Absolute, out Uri? uri)) {
-				continue;
-			}
+		if (!OperatingSystem.IsWindows()) {
+			foreach (string url in webApplication.Urls) {
+				if (!Uri.TryCreate(url, UriKind.Absolute, out Uri? uri)) {
+					continue;
+				}
 
-			switch (uri.Host) {
-				case "unix" when File.Exists(uri.AbsolutePath):
-					try {
-						File.SetUnixFileMode(uri.AbsolutePath, UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.GroupRead | UnixFileMode.GroupWrite | UnixFileMode.OtherRead | UnixFileMode.OtherWrite);
-					} catch (Exception e) {
-						ASF.ArchiLogger.LogGenericWarningException(e);
-					}
+				switch (uri.Host) {
+					case "unix" when File.Exists(uri.AbsolutePath):
+						try {
+							File.SetUnixFileMode(uri.AbsolutePath, UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.GroupRead | UnixFileMode.GroupWrite | UnixFileMode.OtherRead | UnixFileMode.OtherWrite);
+						} catch (Exception e) {
+							ASF.ArchiLogger.LogGenericWarningException(e);
+						}
 
-					break;
+						break;
+				}
 			}
 		}
 
