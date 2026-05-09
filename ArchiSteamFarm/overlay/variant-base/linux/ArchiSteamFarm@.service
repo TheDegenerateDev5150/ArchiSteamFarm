@@ -6,6 +6,7 @@ EnvironmentFile=-/etc/asf/%i
 ExecStart=/home/%i/ArchiSteamFarm/ArchiSteamFarm --no-restart --service --system-required
 Restart=on-success
 RestartSec=1s
+RuntimeDirectory=asf-%i
 SyslogIdentifier=asf-%i
 User=%i
 

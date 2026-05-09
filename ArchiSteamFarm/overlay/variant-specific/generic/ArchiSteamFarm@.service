@@ -6,6 +6,7 @@ EnvironmentFile=-/etc/asf/%i
 ExecStart=dotnet /home/%i/ArchiSteamFarm/ArchiSteamFarm.dll --no-restart --service --system-required
 Restart=on-success
 RestartSec=1s
+RuntimeDirectory=asf-%i
 SyslogIdentifier=asf-%i
 User=%i
 
