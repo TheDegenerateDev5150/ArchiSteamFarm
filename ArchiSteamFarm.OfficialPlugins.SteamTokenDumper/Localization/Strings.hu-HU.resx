@@ -126,4 +126,18 @@
 		<value>Ellenőrzött csomagok: {0}</value>
 		<comment>{0} will be replaced by list of the packages (IDs, numbers), separated by a comma</comment>
 	</data>
+	<data name="SubmissionSuccessfulNewDepots" xml:space="preserve">
+		<value>Új depo: {0}</value>
+		<comment>{0} will be replaced by list of the depots (IDs, numbers), separated by a comma</comment>
+	</data>
+	<data name="SubmissionSuccessfulVerifiedDepots" xml:space="preserve">
+		<value>Ellenőrzött depo: {0}</value>
+		<comment>{0} will be replaced by list of the depots (IDs, numbers), separated by a comma</comment>
+	</data>
+	<data name="LoadingGlobalCache" xml:space="preserve">
+		<value>STD globális gyorsítótár betöltése...</value>
+	</data>
+	<data name="ValidatingGlobalCacheIntegrity" xml:space="preserve">
+		<value>STD globális gyorsítótár integritásának ellenőrzése...</value>
+	</data>
 </root>
